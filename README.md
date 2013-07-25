@@ -27,3 +27,4 @@ I could have used used Google Forms but I decided to use Podio.
 Podio is a project management tool which has a feature which provides free forms.
 The Podio form is rendered by some javascript which is copied from the Podio
 site.
+ * Google maps bug - the map is not centred on the location
