@@ -3,7 +3,6 @@
     var mapOptions = {
         centre: pos,
         zoom: 6,
-        offsetWidth: 0,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
