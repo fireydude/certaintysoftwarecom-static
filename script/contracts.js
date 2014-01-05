@@ -1,17 +1,27 @@
 ﻿
-function WorkExperience(title, dates, desc) {
-    this.title = title;
-    this.dates = dates;
-    this.desc = desc;
-}
-
-var contracts = [new WorkExperience("Matrix Telematics",
-    "Feb 2013 - Mar 2013",
-    "Amazon Web Services"),
-    new WorkExperience("Manheim Retail Services",
+var contracts = [
+    new WorkExperience("matrix",
+        "Matrix Telematics",
+        "Feb 2013 - Mar 2013",
+        "Amazon Web Services"),
+    new WorkExperience("manheim",
+        "Manheim Retail Services",
         "Jan 12 - July 12",
-        "Enterprise solutions for B2B websites")];
-
-for(var i = 0; i<contracts.len; i++) {
-    alert(contracts[i].title);
-}
+        "Enterprise solutions for B2B websites"),
+    new WorkExperience("daniel",
+        "Daniel Contractors",
+        "Jan 12 - July 12",
+        "ASP .NET MVC3"),
+    new WorkExperience("ai-claims",
+        "AI Claims",
+        "Nov 2011 - Jan 2012",
+        "ASP .NET MVC Web Development"),
+    new WorkExperience("cooper",
+        "Cooper Software",
+        "Dec 10 - Jan 11",
+        "ASP .NET Webforms"),
+    new WorkExperience("bae",
+        "BAE Systems",
+        "Jan 10 - June 10",
+        "Connected systems, WCF")
+];
