@@ -1,10 +1,10 @@
 ﻿
-function addExperienceAccordion(id, title, works) {
-    var accordionGroup = '<h2>' + title + '</h2><div class="accordion-group">';
+function addExperienceAccordion(id, header, works, title) {
+    var accordionGroup = '<h2 title="'+title+'">' + header + '</h2><div class="accordion-group">';
     for (var i = 0; i < works.length; i++) {
         accordionGroup += '<div class="accordion-heading">';
         accordionGroup += '<a class="accordion-toggle btn-lft btn" data-toggle="collapse" data-parent="#' + id + '-accordion"';
-        accordionGroup += 'href="#' + works[i].id + '">' + works[i].title + '</a>';
+        accordionGroup += 'href="#' + works[i].id + '">' + works[i].header + '</a>';
         accordionGroup += '</div>';
         accordionGroup += '<div id="' + works[i].id + '" class="acccordion-body collapse">';
         accordionGroup += '<div class="accordion-inner">';
@@ -20,9 +20,9 @@ function addExperienceAccordion(id, title, works) {
     accordionGroup += '</div>';
     $('#' + id + '-accordion').append(accordionGroup);
 }
-function WorkExperience(id, title, dates, desc, sub, subText) {
+function WorkExperience(id, header, dates, desc, sub, subText) {
     this.id = id;
-    this.title = title;
+    this.header = header;
     this.dates = dates;
     this.desc = desc;
     this.sub = sub;

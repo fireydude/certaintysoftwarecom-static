@@ -1,9 +1,5 @@
 ﻿
 var contracts = [
-    new WorkExperience("jlr",
-        "Jaguar Land Rover",
-        "June 2013 - Dec 2013",
-        "Interactive website"),
     new WorkExperience("webnet",
         "WebNET",
         "Aug 2012 - Sept 2013",
