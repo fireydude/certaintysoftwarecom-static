@@ -1,0 +1,10 @@
+#infovis-canvaswidget {
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+#infovis {
+    position:relative;
+    margin:auto;
+    overflow:hidden;
+}
