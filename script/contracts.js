@@ -1,5 +1,9 @@
 ﻿
 var contracts = [
+    new WorkExperience("mdis",
+        "MD Insurance Services",
+        "May 2015 - Aug 2015",
+        "Extranet website with ASP .NET MVC"),
     new WorkExperience("nice",
         "National Institue for Health and Care Excellence",
         "Oct 2014 - March 2015",
