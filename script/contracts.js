@@ -1,5 +1,17 @@
 ﻿
 var contracts = [
+    new WorkExperience("nice",
+        "National Institue for Health and Care Excellence",
+        "Oct 2014 - March 2015",
+        "ASP .NET MVC and Orchard CMS"),
+    new WorkExperience("nitecrest",
+        "Nitecrest",
+        "Aug 2014 - Oct 2014",
+        "Data processing solutions in .NET with a web front end"),
+    new WorkExperience("uu",
+        "Universal Utilities",
+        "June 2014 - Aug 2014",
+        "ASP .NET web Development"),
     new WorkExperience("webnet",
         "WebNET",
         "Aug 2012 - Sept 2013",
