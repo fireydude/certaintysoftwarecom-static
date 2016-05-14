@@ -1,4 +1,8 @@
 ﻿var perms = [
+    new WorkExperience("wbac",
+        "webuyanycar.com",
+        "Oct 2015 - present",
+        "Service Oriented Architecture, AngularJS, MVC, SQL Server, Typescript"),
     new WorkExperience("andrews",
         "Andrews",
         "2010",
