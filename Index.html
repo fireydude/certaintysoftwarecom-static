@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Certainty Software</title>
     <link href="bootstrap/cerulean/bootstrap.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="favicon.ico" >
+    <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta name="description" content="Certainty Software Ltd - Brian S Herbert, Software Development Consultant">
     <meta name="keywords" content="C#, ASP .NET, MVC, ASP .NET MVC, Agile, Brian Sidney Herbert, Brian S Herbert, Brian Herbert, Certainty Software">
@@ -12,59 +13,35 @@
     <script src="script/284922.js"></script>
     <!-- <script src="script/main.js"></script> -->
 </head>
-<body>
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="http://www.certaintysoftware.com">Certainty Software</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#aboutme" target="active-tab" data-toggle="tab">About Me</a></li>
-                        <li><a href="#keyskills" target="active-tab" data-toggle="tab">Key Skills</a></li>
-                        <li><a href="#workexperience" data-toggle="tab">Work Experience</a></li>
-                        <li><a href="#education" data-toggle="tab">Education</a></li>
-                        <li><a href="#contact" data-toggle="tab">Contact</a></li>
-                    </ul>
-                </div>
+
+<body ng-app="cs">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.certaintysoftware.com">Certainty Software</a>
             </div>
-        </div>
-    <div class="container tab-content">
-        <div class="page-header">
-            <div class="row">
-            <h1>Brian Herbert</h1>
-            <p><i>"dependable and consistent approach to problem solving"</i></p>
-            </div>
-        </div>
-        <div class="tab-pane active" id="aboutme"><p>loading about me</p>
-            </div>
-        <div class="tab-pane" id="keyskills"><p>loading skills</p>
-            </div>
-        <div class="tab-pane" id="workexperience">loading experience
-        </div>
-        <div class="tab-pane" id="education">loading education
-        </div>
-        <div class="tab-pane" id="contact">
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- BEGIN Podio web form -->
-                    <script type="text/javascript">
-                        _podioWebForm.render("284922")
-                    </script>
-                    <!-- END Podio web form -->
-                </div>
-                <div class="col-md-6">
-                    <iframe id="map-canvas" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Manchester,+M4+7EE&amp;aq=0&amp;oq=m4+7&amp;sll=52.8382,-2.327815&amp;sspn=10.054521,31.640625&amp;ie=UTF8&amp;hq=&amp;hnear=Manchester+M4+7EE,+United+Kingdom&amp;t=m&amp;z=13&amp;ll=53.510407,-2.249767&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Manchester,+M4+7EE&amp;aq=0&amp;oq=m4+7&amp;sll=52.8382,-2.327815&amp;sspn=10.054521,31.640625&amp;ie=UTF8&amp;hq=&amp;hnear=Manchester+M4+7EE,+United+Kingdom&amp;t=m&amp;z=14&amp;ll=53.479407,-2.217767" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <a href="http://www.linkedin.com/pub/brian-herbert/23/a6b/769">LinkedIn</a><br />
-                    <!-- <div id="map-canvas" /> -->
-                </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a ui-sref="aboutme">About Me</a></li>
+                    <li><a ui-sref="keyskills">Key Skills</a></li>
+                    <li><a ui-sref="workexperience" >Work Experience</a></li>
+                    <li><a ui-sref="education" >Education</a></li>
+                    <li><a ui-sref="contact" >Contact</a></li>
+                </ul>
             </div>
         </div>
     </div>
+    <div class="container tab-content">
+        <div class="page-header">
+            <div class="row">
+                <h1>Brian Herbert</h1>
+                <p><i>"dependable and consistent approach to problem solving"</i></p>
+            </div>
+        </div>
+        <div ui-view></div>
+    </div>
+    <script src="script/angular.js"></script>
+    <script src="script/angular-ui-router.js"></script>
     <script src="script/jquery-1.10.2.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -74,5 +51,34 @@
         $('#education').load('./education.html');
     </script>
     <script src="script/main.js"></script>
+    <script>
+        var app = angular.module('cs', ['ui.router']);
+
+        app.config(function($stateProvider, $urlRouterProvider){
+            $urlRouterProvider.otherwise('/aboutme');
+
+            $stateProvider.state('aboutme', {
+                url: '/aboutme',
+                templateUrl: 'aboutme.html'
+            })
+            .state('keyskills', {
+                url: '/keyskills',
+                templateUrl: 'keyskills.html'
+            })
+            .state('workexperience', {
+                url: '/workexperience',
+                templateUrl: 'workexperience.html'
+            })
+            .state('education', {
+                url: '/education',
+                templateUrl: 'education.html'
+            })
+            .state('contact', {
+                url: '/contact',
+                templateUrl: 'contact.html'
+            });
+        });
+        </script>
 </body>
+
 </html>
