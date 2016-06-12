@@ -35,9 +35,24 @@ function WorkExperience(id, header, dates, desc, sub, subText) {
 
 // controller
 var workExperienceCtrl = function(){
+    this.permsHeader = 'Permanent';
     this.perms = perms;
+    this.contractsHeader = 'Contract';
     this.contracts = contracts;
+    this.freelanceHeader = 'Freelance'
     this.freelance = freelance;
 };
 angular.module('cs')
     .controller('workExperienceCtrl', workExperienceCtrl);
+
+angular.module('cs')
+    .directive('experienceAccordion', function(){
+        return {
+            restrict: 'E',
+            scope: {
+                header: '=type',
+                items: '=works'
+            },
+            templateUrl: "experienceAccordion.html"
+        };
+    });
