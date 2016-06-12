@@ -22,6 +22,8 @@ function addExperienceAccordion(id, header, works, title) {
     accordionGroup += '</div>';
     $('#' + id + '-accordion').append(accordionGroup);
 }
+
+// model
 function WorkExperience(id, header, dates, desc, sub, subText) {
     this.id = id;
     this.header = header;
@@ -30,3 +32,12 @@ function WorkExperience(id, header, dates, desc, sub, subText) {
     this.sub = sub;
     this.subText = subText;
 }
+
+// controller
+var workExperienceCtrl = function(){
+    this.perms = perms;
+    this.contracts = contracts;
+    this.freelance = freelance;
+};
+angular.module('cs')
+    .controller('workExperienceCtrl', workExperienceCtrl);

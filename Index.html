@@ -22,11 +22,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a ui-sref="aboutme">About Me</a></li>
+                    <li><a ui-sref="aboutme">About Me</a></li>
                     <li><a ui-sref="keyskills">Key Skills</a></li>
-                    <li><a ui-sref="workexperience" >Work Experience</a></li>
-                    <li><a ui-sref="education" >Education</a></li>
-                    <li><a ui-sref="contact" >Contact</a></li>
+                    <li><a ui-sref="workexperience">Work Experience</a></li>
+                    <li><a ui-sref="education">Education</a></li>
+                    <li><a ui-sref="contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -44,13 +44,6 @@
     <script src="script/angular-ui-router.js"></script>
     <script src="script/jquery-1.10.2.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $('#aboutme').load('./aboutme.html');
-        $('#keyskills').load('./keyskills.html');
-        $('#workexperience').load('./workexperience.html');
-        $('#education').load('./education.html');
-    </script>
-    <script src="script/main.js"></script>
     <script>
         var app = angular.module('cs', ['ui.router']);
 
@@ -67,7 +60,8 @@
             })
             .state('workexperience', {
                 url: '/workexperience',
-                templateUrl: 'workexperience.html'
+                templateUrl: 'workexperience.html',
+                controller: workExperienceCtrl
             })
             .state('education', {
                 url: '/education',
@@ -78,7 +72,12 @@
                 templateUrl: 'contact.html'
             });
         });
-        </script>
+    </script>
+    <script src="script/workExperience.js"></script>
+    <script src="script/contracts.js"></script>
+    <script src="script/freelance.js"></script>
+    <script src="script/perms.js"></script>
+    <script src="script/main.js"></script>
 </body>
 
 </html>
