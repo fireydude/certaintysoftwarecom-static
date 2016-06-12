@@ -1,12 +1,9 @@
-﻿<div ng-controller="workExperienceCtrl as vm" <div class="row">
+﻿<div ng-controller="workExperienceCtrl as vm" class="row">
     <div class="col-md-6">
-        <experience-accordion type="vm.contractExperience.header" works="vm.contractExperience.dates">
-        </experience-accordion>
+        <experience-accordion type="vm.contractExperience"></experience-accordion>
     </div>
     <div class="col-md-6">
-        <experience-accordion type="vm.freelanceExperience.header" works="vm.freelanceExperience.dates">
-        </experience-accordion>
-        <experience-accordion type="vm.permExperience.header" works="vm.permExperience.dates">
-        </experience-accordion>
+        <experience-accordion type="vm.freelanceExperience"></experience-accordion>
+        <experience-accordion type="vm.permExperience"></experience-accordion>
     </div>
 </div>
