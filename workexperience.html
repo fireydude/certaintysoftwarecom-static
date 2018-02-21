@@ -1,35 +1,9 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Certainty Software</title>
-    <link href="bootstrap/slate/bootstrap.css" rel="stylesheet" />
-    <link href="bootstrap/bootstrap-custom.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="/favicon.ico" >
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <!-- <script src="https://podio.com/webforms/3704865/284922.js"></script> -->
-    <script src="script/284922.js"></script>
-</head>
-<body>
-    <div class="row">
-        <div class="span6">
-            <div class="accordion" id="contract-accordion"></div>
-        </div>
-        <div class="span6">
-            <div class="accordion" id="freelance-accordion"></div>
-            <div class="accordion" id="perm-accordion"></div>
-        </div>
+﻿<div ng-controller="workExperienceCtrl as vm" class="row">
+    <div class="col-md-6">
+        <experience-accordion type="vm.contractExperience"></experience-accordion>
     </div>
-</body>
-    <script src="script/workExperience.js"></script>
-    <script src="script/contracts.js"></script>
-    <script src="script/freelance.js"></script>
-    <script src="script/perms.js"></script>
-    <script>
-        $(document).ready(function () {
-            addExperienceAccordion("contract", "Contract", contracts, "Worked for these companies");
-            addExperienceAccordion("freelance", "Freelance", freelance, "Projects undertaken for these companies");
-            addExperienceAccordion("perm", "Permanent", perms, "Employed by these companies");
-        });
-    </script>
-</html>
+    <div class="col-md-6">
+        <experience-accordion type="vm.freelanceExperience"></experience-accordion>
+        <experience-accordion type="vm.permExperience"></experience-accordion>
+    </div>
+</div>

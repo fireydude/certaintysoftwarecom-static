@@ -1,0 +1,22 @@
+<h2 title="{{model.desc}}">{{model.header}}</h2>
+<div class="panel-group" id="{{model.id}}-accordion">
+    <div ng-repeat="item in model.items">
+        <div class="panel panel-default" id="{{item.id}}-accordion">
+            <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#{{item.id}}-accordion" data-target="#{{item.id}}" href="javascript:;" aria-expanded="false">
+                    <h4 class="panel-title">{{item.header}}</h4>
+                </a>
+            </div>
+            <div id="{{item.id}}" class="panel-collapse collapse">
+                <div style="margin:15px;">
+                    <h5>{{item.dates}}</h5>
+                    <p>{{item.desc}}</p>
+                    <div ng-show="item.sub != undefined">
+                        <h5>{{itemp.sub}}</h5>
+                        <p>{{item.subText}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

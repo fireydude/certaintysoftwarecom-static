@@ -1,25 +1,5 @@
 ﻿
-function addExperienceAccordion(id, header, works, title) {
-    var accordionGroup = '<h2 title="'+title+'">' + header + '</h2><div class="accordion-group">';
-    for (var i = 0; i < works.length; i++) {
-        accordionGroup += '<div class="accordion-heading">';
-        accordionGroup += '<a class="accordion-toggle btn-lft btn" data-toggle="collapse" data-parent="#' + id + '-accordion"';
-        accordionGroup += 'href="#' + works[i].id + '">' + works[i].header + '</a>';
-        accordionGroup += '</div>';
-        accordionGroup += '<div id="' + works[i].id + '" class="acccordion-body collapse">';
-        accordionGroup += '<div class="accordion-inner">';
-        accordionGroup += '<h5>' + works[i].dates + '</h5>';
-        accordionGroup += '<p>' + works[i].desc + '</p>';
-        if (typeof(works[i].sub) != 'undefined') {
-            accordionGroup += '<h5>' + works[i].sub + '</h5>';
-            accordionGroup += '<p>' + works[i].subText + '</p>';
-        }
-        accordionGroup += '</div>';
-        accordionGroup += '</div>';
-    }
-    accordionGroup += '</div>';
-    $('#' + id + '-accordion').append(accordionGroup);
-}
+// model
 function WorkExperience(id, header, dates, desc, sub, subText) {
     this.id = id;
     this.header = header;
@@ -28,3 +8,33 @@ function WorkExperience(id, header, dates, desc, sub, subText) {
     this.sub = sub;
     this.subText = subText;
 }
+
+// model
+function WorkExperienceGroup(id, header, items, desc) {
+    this.id = id;
+    this.header = header;
+    this.items = items;
+    this.desc = desc;
+}
+
+// controller
+var workExperienceCtrl = function(){
+    this.contractExperience = new WorkExperienceGroup("contract", "Contract", contracts, "Worked for these companies");
+    this.freelanceExperience = new WorkExperienceGroup("freelance", "Freelance", freelance, "Projects undertaken for these companies");
+    this.permExperience = new WorkExperienceGroup("perm", "Permanent", perms, "Employed by these companies");
+
+};
+
+angular.module('cs')
+    .controller('workExperienceCtrl', workExperienceCtrl);
+
+angular.module('cs')
+    .directive('experienceAccordion', function(){
+        return {
+            restrict: 'E',
+            scope: {
+                model: '=type',
+            },
+            templateUrl: "experienceAccordion.html"
+        };
+    });
