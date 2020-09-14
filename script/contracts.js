@@ -1,5 +1,9 @@
 ﻿
 var contracts = [
+    new WorkExperience("om",
+        "Open Money",
+        "Jan 2019 - Jan 2020",
+        "Azure Service Fabric, Angular2, Function Apps and C#"),
     new WorkExperience("mdis",
         "MD Insurance Services",
         "May 2015 - Aug 2015",
